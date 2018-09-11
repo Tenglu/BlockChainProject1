@@ -35,6 +35,7 @@ import com.example.demo.contract.Contract3;
 @Controller
 @RequestMapping("/BC")
 public class BlockChainController {
+	//Test git
 	String file="UTC--2018-09-04T09-03-23.515793222Z--dedbba016ca1e4ab64452199667eb04dd17d86fa";
 	String dir="/home/blockchain/Blockchain/geth/data/keystore";
 	private final Logger logger = LoggerFactory.getLogger(getClass());
