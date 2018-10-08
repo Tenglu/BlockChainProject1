@@ -13,6 +13,11 @@ public class WebMvcConfigurer implements org.springframework.web.servlet.config.
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/login").setViewName("login");
 		registry.addViewController("/index").setViewName("index");
+		registry.addViewController("/index2").setViewName("index2");
+		registry.addViewController("/index3").setViewName("index3");
+		registry.addViewController("/BC/route_path").setViewName("route_path");
+		registry.addViewController("/route_path").setViewName("route_path");
+		registry.addViewController("/work_order").setViewName("work_order");
 		logger.info("======WebMvcConfigurer:  access login url.");
 	}
 

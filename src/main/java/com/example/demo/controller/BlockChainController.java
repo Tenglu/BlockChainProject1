@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +55,19 @@ public class BlockChainController {
 		return mav;
 		
 	}
+	/**
+	@RequestMapping(value = "/route_path", params = { "username","password" })
+	public ModelAndView home(String username,String password, HttpSession session){
+		ModelAndView mav=new ModelAndView();
+		System.out.println("username:"+username);
+		System.out.println("password:"+password);
+		mav.setViewName("route_path");
+
+		return mav;
+		
+	}
+	**/
+	
 	
 	@RequestMapping("/index")
 	public ModelAndView index2(){
