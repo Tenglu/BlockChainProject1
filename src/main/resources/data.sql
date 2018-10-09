@@ -1,0 +1,1 @@
+insert into SYS_USER (id,username,password) values(1,'tenglu','tenglu');
