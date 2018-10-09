@@ -11,6 +11,7 @@ public class WebMvcConfigurer implements org.springframework.web.servlet.config.
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/home").setViewName("home");
 		registry.addViewController("/login").setViewName("login");
 		registry.addViewController("/index").setViewName("index");
 		registry.addViewController("/index2").setViewName("index2");
