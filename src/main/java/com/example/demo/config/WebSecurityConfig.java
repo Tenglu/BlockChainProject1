@@ -26,7 +26,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-        	.antMatchers("/css/**", "/js/**","/fonts/**").permitAll()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
                 .and()
                 .formLogin()
@@ -42,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         //设置静态资源不要拦截
-        web.ignoring().antMatchers("/js/**","/cs/**","/images/**","/plugins/**");
+        web.ignoring().antMatchers("/dist/**","/build/**","/css/**","/plugins/**");
     }
 
 
