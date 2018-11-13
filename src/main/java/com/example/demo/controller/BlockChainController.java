@@ -49,7 +49,7 @@ public class BlockChainController {
 	BlockChainService bcService;
 	
 	@RequestMapping("/login")
-	public ModelAndView index(){
+	public ModelAndView index(HttpSession session){
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("login");
 		return mav;

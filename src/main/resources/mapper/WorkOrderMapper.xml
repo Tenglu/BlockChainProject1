@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.WorkOrderMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.model.WorkOrder">
+    <id column="work_order_number" jdbcType="VARCHAR" property="workOrderNumber" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="service_type" jdbcType="VARCHAR" property="serviceType" />
+    <result column="assets_qty" jdbcType="INTEGER" property="assetsQty" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="incomplete_reason" jdbcType="VARCHAR" property="incompleteReason" />
+    <result column="remark_notes" jdbcType="VARCHAR" property="remarkNotes" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    work_order_number, location, service_type, assets_qty, time, incomplete_reason, remark_notes
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from work_order_list
+    where work_order_number = #{workOrderNumber,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from work_order_list
+    where work_order_number = #{workOrderNumber,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.model.WorkOrder">
+    insert into work_order_list (work_order_number, location, service_type, 
+      assets_qty, time, incomplete_reason, 
+      remark_notes)
+    values (#{workOrderNumber,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{serviceType,jdbcType=VARCHAR}, 
+      #{assetsQty,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP}, #{incompleteReason,jdbcType=VARCHAR}, 
+      #{remarkNotes,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.model.WorkOrder">
+    insert into work_order_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="workOrderNumber != null">
+        work_order_number,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="serviceType != null">
+        service_type,
+      </if>
+      <if test="assetsQty != null">
+        assets_qty,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="incompleteReason != null">
+        incomplete_reason,
+      </if>
+      <if test="remarkNotes != null">
+        remark_notes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="workOrderNumber != null">
+        #{workOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceType != null">
+        #{serviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="assetsQty != null">
+        #{assetsQty,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="incompleteReason != null">
+        #{incompleteReason,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkNotes != null">
+        #{remarkNotes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.model.WorkOrder">
+    update work_order_list
+    <set>
+      <if test="location != null">
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceType != null">
+        service_type = #{serviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="assetsQty != null">
+        assets_qty = #{assetsQty,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="incompleteReason != null">
+        incomplete_reason = #{incompleteReason,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkNotes != null">
+        remark_notes = #{remarkNotes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where work_order_number = #{workOrderNumber,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.model.WorkOrder">
+    update work_order_list
+    set location = #{location,jdbcType=VARCHAR},
+      service_type = #{serviceType,jdbcType=VARCHAR},
+      assets_qty = #{assetsQty,jdbcType=INTEGER},
+      time = #{time,jdbcType=TIMESTAMP},
+      incomplete_reason = #{incompleteReason,jdbcType=VARCHAR},
+      remark_notes = #{remarkNotes,jdbcType=VARCHAR}
+    where work_order_number = #{workOrderNumber,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title> Route Path </title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+      </li>
+     
+    </ul>
+
+  </nav>
+  <!-- /.navbar -->
+
+  <div th:replace="fragments/navbar :: pagenavbar">...</div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <!-- /.col -->
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header p-2">
+                <h1>Part history</h1>
+                
+              </div><!-- /.card-header -->
+              <div class="card-body">
+	              <form role="form">
+	             
+	              	<div class="form-group col-sm-12">
+	               		<label class="form-inline " ><div class="col-sm-2">Serial No : </div><input type="text" class="form-control col-sm-10" placeholder="960707346">
+	                  </div></label>
+	                 	
+	                  <div class=" form-group col-sm-12">
+	                    <label class="form-inline"><div class="col-sm-2">Parts No :</div>
+	                    <input type="text" class="form-control col-sm-10" placeholder="124958-141"></label>
+	                  </div>
+	
+					 <div class="form-group col-sm-12">
+	                    <label class="form-inline"><div class="col-sm-2">Parts Name:</div>
+	                    <input type="text" class="form-control col-sm-10" placeholder="Boeing Inboard Overhead Unit"></label>
+	                  </div>
+	                  <div class="row form-group">
+	                  <div class="col-sm-6 form-inline">
+	                    <label for="manual_date" class="form-inline"><div class="col-sm-6">Manual Date:</div>
+	                    <input type="text" id="manual_date" class="form-control col-sm-6" placeholder="10/9/2016"></label>
+	                  </div>
+	                   <div class="col-sm-6 form-inline">
+	                    <label for="lot_no" class="form-inline"><div class="col-sm-6">Lot No:</div>
+	                    <input type="text" id="lot_no" class="form-control col-sm-6" placeholder="10"></label>
+	                  </div>
+	                  </div>
+	                   <div class="form-group col-sm-12">
+	                    <label class="form-inline"><div class="col-sm-2">Supplier:</div>
+	                    <input type="text" class="form-control col-sm-10" placeholder="Boeing"></label>
+	                  </div>
+	                 </form>
+                  
+              </div><!-- /.card-body -->
+              
+              
+            </div>
+            
+            
+            
+             <div class="card">
+              <div class="card-header no-border">
+                <h3 class="card-title">History:</h3>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-sm">
+                    <i class="fa fa-download"></i>
+                  </a>
+                  <a href="#" class="btn btn-tool btn-sm">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <table class="table table-striped table-valign-middle">
+                  <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>PIC</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      20/10/2016
+                    </td>
+                    <td>Check-in warehouse</td>
+                    <td>
+                        JLW
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>
+                      30/10/2016
+                    </td>
+                    <td>Install = N888A</td>
+                    <td>
+                      LCM
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>
+                      
+                      5/1102017
+                    </td>
+                    <td>Remove</td>
+                    <td>
+                      LCM
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>
+                      15/10/2017
+                    </td>
+                    <td>Repair</td>
+                    <td>
+                      YAD
+                    </td>
+                    
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- /.card -->
+            
+            <div class="card">
+              <div class="card-header no-border">
+                <h3 class="card-title">Remarks:</h3>
+                <div class="card-cody">
+                <div class="row">
+                    <textarea class="form-control" rows="3" placeholder="Remarks"></textarea>
+            
+            </div>
+                </div>
+            
+           
+            
+            </div>
+            </div>
+            <div class="row">
+            	<div class="col-sm-3">
+                	 <button type="button" class="btn btn-block btn-default" onclick="location='/index'">Close</button>
+                 </div>
+            </div>
+            
+            
+            
+            
+            <!-- /.nav-tabs-custom -->
+          </div>
+          <!-- /.col -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE -->
+<script src="dist/js/adminlte.js"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="dist/js/demo.js"></script>
+<script src="dist/js/pages/dashboard3.js"></script>
+</body>
+</html>
